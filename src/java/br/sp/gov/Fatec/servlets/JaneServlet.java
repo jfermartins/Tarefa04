@@ -42,7 +42,7 @@ public class JaneServlet extends HttpServlet {
             out.println("<body>");
             out.println("<h1>Jane Fernanda Martins</h1>");
             out.println("<h2>RA: 1290481812013</h2>");
-            out.println("<a href='github.com/jfermartins'>GitHub</a><br><br>");
+            out.println("<a href='www.github.com/jfermartins'>GitHub</a><br><br>");
             out.println("<a href='index.html'>Voltar</a>");
             out.println("</body>");
             out.println("</html>");
