@@ -17,7 +17,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author Fernanda
  */
-@WebServlet(name = "MathServlet", urlPatterns = {"/MathServlet"})
+@WebServlet(name = "MathServlet", urlPatterns = {"/math.html"})
 public class MathServlet extends HttpServlet {
 
     /**
@@ -40,7 +40,7 @@ public class MathServlet extends HttpServlet {
             out.println("<title>Operações aritméticas - Java EE</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Operações</h1>");
+            out.println("<h1>Operações Aritméticas</h1>");
  
             try{
                double n1 = Double.parseDouble(request.getParameter("n1"));
@@ -49,9 +49,9 @@ public class MathServlet extends HttpServlet {
                double resultso = n1 + n2;
                double resultmul = n1 * n2;
                double resultdiv = n1 / n2;
-               out.println("<div>A subtração de "+ n1 +" menos "+ n2 +" é igual a <b>"+ resultsub +"</b></div>");
-               out.println("<div>A soma de "+ n1 +" mais "+ n2 +" é igual a <b>"+ resultso +"</b></div>");
-               out.println("<div>A multiplicação de "+ n1 +" vezes "+ n2 +" é igual a <b>"+ resultmul +"</b></div>");
+               out.println("<div>A subtração de "+ n1 +" menos "+ n2 +" é igual a <b>"+ resultsub +"</b></div><br>");
+               out.println("<div>A soma de "+ n1 +" mais "+ n2 +" é igual a <b>"+ resultso +"</b></div><br>");
+               out.println("<div>A multiplicação de "+ n1 +" vezes "+ n2 +" é igual a <b>"+ resultmul +"</b></div><br>");
                out.println("<div>A divisão de "+ n1 +" dividido por "+ n2 +" é igual a <b>"+ resultdiv +"</b></div><br><br>");
             } catch (Exception ex) {
               out.println("<div>Erro ao ler parâmetros</div>");  
