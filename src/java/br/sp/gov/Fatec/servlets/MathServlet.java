@@ -17,8 +17,8 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author Fernanda
  */
-@WebServlet(name = "JaneServlet", urlPatterns = {"/jane.html"})
-public class JaneServlet extends HttpServlet {
+@WebServlet(name = "MathServlet", urlPatterns = {"/MathServlet"})
+public class MathServlet extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -37,12 +37,25 @@ public class JaneServlet extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>My name - Java EE</title>");            
+            out.println("<title>Operações aritméticas - Java EE</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Jane Fernanda Martins</h1>");
-            out.println("<h2>RA: 1290481812013</h2>");
-            out.println("<p><a target=\"_blank\" href=\"https://www.terra.com.br\">Terra</a></p>");
+            out.println("<h1>Operações</h1>");
+ 
+            try{
+               double n1 = Double.parseDouble(request.getParameter("n1"));
+               double n2 = Double.parseDouble(request.getParameter("n2"));
+               double resultsub = n1 - n2;
+               double resultso = n1 + n2;
+               double resultmul = n1 * n2;
+               double resultdiv = n1 / n2;
+               out.println("<div>A subtração de "+ n1 +" menos "+ n2 +" é igual a <b>"+ resultsub +"</b></div>");
+               out.println("<div>A soma de "+ n1 +" mais "+ n2 +" é igual a <b>"+ resultso +"</b></div>");
+               out.println("<div>A multiplicação de "+ n1 +" vezes "+ n2 +" é igual a <b>"+ resultmul +"</b></div>");
+               out.println("<div>A divisão de "+ n1 +" dividido por "+ n2 +" é igual a <b>"+ resultdiv +"</b></div><br><br>");
+            } catch (Exception ex) {
+              out.println("<div>Erro ao ler parâmetros</div>");  
+            }
             out.println("<a href='index.html'>Voltar</a>");
             out.println("</body>");
             out.println("</html>");
