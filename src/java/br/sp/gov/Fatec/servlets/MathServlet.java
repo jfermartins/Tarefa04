@@ -41,6 +41,7 @@ public class MathServlet extends HttpServlet {
             out.println("</head>");
             out.println("<body>");
             out.println("<h1>Operações Aritméticas</h1>");
+            
  
             try{
                double n1 = Double.parseDouble(request.getParameter("n1"));
